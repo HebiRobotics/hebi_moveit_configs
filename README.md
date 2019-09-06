@@ -60,15 +60,21 @@ roslaunch moveit_setup_assistant setup_assistant.launch
 1. Enter "group name" as "hebi_arm"
 1. Choose `kdl_kinematics_plugin/KDLKinematicsPlugin` as the kinematics solver. Note: this can be tweaked as desired
 1. Let "Kin. Search Resolution" and "Kin. Search Timeout" stay at their default values.
-1. Click "add joints".  Shift-click to select all of the actuator joints in the left pane (e.g., "HEBI/base/X8_9")
+1. Click "add joints".  Ctrl-click to select all of the actuator joints in the left pane (e.g., "HEBI/base/X8_9")
 1. Click on the right arrow in the center to add the selected joints to the right panel
 1. Press "save"
 
 ### Gripper
 
-1. If you have a gripper, you can add the gripper as a planning group, and reference it on the "End Effectors" tab.
+If you have a gripper, you can add the gripper as a planning group, too:
 
-**TODO: We still need to add this for the HEBI kits**
+1. Click "add group"
+1. Enter "group name" as "hand"
+1. Leave kinematic solver as "none", and let "Kin. Search Resolution" and "Kin. Search Timeout" stay at their default values.
+1. Click "add links"
+1. Shift-click to select all of the links in the left pane that begin with "end_effector" _except for_ `end_effector/INPUT_INTERFACE` (or whichever links are part of your end effector)
+1. Click on the right arrow in the center to add the selected links to the right panel
+1. Press "save"
 
 ### Robot Poses
 
@@ -76,14 +82,27 @@ roslaunch moveit_setup_assistant setup_assistant.launch
 1. Click "Add Pose".
 1. Choose a name for the pose, and set joint angles here.  We recommend adding a "home" pose in a convenient (e.g., elbow-up) configuration.
 
-### 3D Perception
+If you have a gripper, you can add gripper poses here the same way.  We recommend adding an "open" and "closed" pose for the gripper.
 
-1. Go to the 3D sensing/perception tab, and select "none"
+### End Effectors
+
+**Only follow these steps if you have a gripper**
+
+1. Move to the end effectors tab
+1. Choose `hand` as the "End Effector Name"
+1. Choose `hand` as the "End Effector Group"
+1. Choose `end_effector/INPUT_INTERFACE` as the "parent link" (this serves as the output of the last link on the arm)
+1. Leave "parent group" blank
 
 ### ROS Controllers
 
 1. Move to the ROS Controllers tab
-1. Click the "auto add followjointstrajectory controllers for each planning group" at the top of the page. **TODO: may have to do this manually after adding grippers**
+1. Click the "auto add followjointstrajectory controllers for each planning group" at the top of the page.
+1. **If creating an arm with a gripper**, delete the `hand_controller` controller that was created.
+
+### 3D Perception
+
+1. Go to the 3D sensing/perception tab, and select "none"
 
 ### Author Information
 
@@ -94,6 +113,15 @@ roslaunch moveit_setup_assistant setup_assistant.launch
 1. Go to the "Configuration Files" tab, and select the desired output directory.  Note that the files will be placed directly in the selected directory, not in a new subdirectory, so choose a directory matching convention such as `myrobotname_moveit_config`.
 1. Click "Generate Package"
 1. Click "exit setup assistant"
+1. **If creating an arm with a gripper**, you will need to manually add the following entry to the end of the `config/ros_controllers.yaml` file, under the `controller_list` parameter.  You may have to change the joint name if you have created a different end effector.
+```
+  - name: hand_controller
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    joints:
+      - end_effector/input_l_finger
+```
 1. Save/commit your files after testing them.
 
 
