@@ -9,10 +9,10 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - HEBI/base/X5_4
-    - HEBI/shoulder/X5_9
-    - HEBI/elbow/X5_4
-    - HEBI/wrist1/X5_1
+    - Arm/J1_base/X5_4
+    - Arm/J2_shoulder/X5_9
+    - Arm/J3_elbow/X5_4
+    - Arm/J4_wrist1/X5_1
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS

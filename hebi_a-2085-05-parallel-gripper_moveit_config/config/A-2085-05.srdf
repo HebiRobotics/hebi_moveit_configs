@@ -10,13 +10,14 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="hebi_arm">
-        <joint name="HEBI/base/X8_9" />
-        <joint name="HEBI/shoulder/X8_16" />
-        <joint name="HEBI/elbow/X8_9" />
-        <joint name="HEBI/wrist1/X5_1" />
-        <joint name="HEBI/wrist2/X5_1" />
+        <joint name="Arm/J1_base/X8_9" />
+        <joint name="Arm/J2_shoulder/X8_16" />
+        <joint name="Arm/J3_elbow/X8_9" />
+        <joint name="Arm/J4_wrist1/X5_1" />
+        <joint name="Arm/J5_wrist2/X5_1" />
     </group>
     <group name="hand">
+        <link name="end_effector/INPUT_INTERFACE" />
         <link name="end_effector/center_hub" />
         <link name="end_effector/l_inner_linkage" />
         <link name="end_effector/r_inner_linkage" />
@@ -28,13 +29,7 @@
         <link name="end_effector/r_gripper" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="home" group="hebi_arm">
-        <joint name="HEBI/base/X8_9" value="0" />
-        <joint name="HEBI/elbow/X8_9" value="2" />
-        <joint name="HEBI/shoulder/X8_16" value="1" />
-        <joint name="HEBI/wrist1/X5_1" value="1" />
-        <joint name="HEBI/wrist2/X5_1" value="0" />
-    </group_state>
+    <group_state name="home" group="hebi_arm" />
     <group_state name="open" group="hand">
         <joint name="end_effector/center_hub_l_inner_linkage" value="0" />
         <joint name="end_effector/center_hub_r_inner_linkage" value="0" />
@@ -55,62 +50,67 @@
     <end_effector name="hand" parent_link="end_effector/INPUT_INTERFACE" group="hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="world" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="end_effector/center_hub_l_inner_linkage" />
+    <passive_joint name="end_effector/center_hub_r_inner_linkage" />
+    <passive_joint name="end_effector/l_outer_linkage_l_gripper" />
+    <passive_joint name="end_effector/r_outer_linkage_r_gripper" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="HEBI/base/INPUT_INTERFACE" link2="HEBI/elbow/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/base/INPUT_INTERFACE" link2="HEBI/shoulder/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/base/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/base/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
-    <disable_collisions link1="HEBI/base/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/base/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="HEBI/shoulder/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="HEBI/wrist1/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="HEBI/wrist2/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="elbow_wrist1/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/l_gripper" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/l_inner_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/l_outer_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/r_finger" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/r_gripper" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/r_inner_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="end_effector/r_outer_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/elbow/INPUT_INTERFACE" link2="wrist1_wrist2/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/shoulder/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/shoulder/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
-    <disable_collisions link1="HEBI/shoulder/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/shoulder/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="HEBI/wrist2/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="elbow_wrist1/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/l_gripper" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/l_inner_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/l_outer_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/r_finger" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/r_gripper" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/r_inner_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="end_effector/r_outer_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/wrist1/INPUT_INTERFACE" link2="wrist1_wrist2/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="elbow_wrist1/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Adjacent" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/l_gripper" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/l_inner_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/l_outer_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/r_finger" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/r_gripper" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/r_inner_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="end_effector/r_outer_linkage" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Never" />
-    <disable_collisions link1="HEBI/wrist2/INPUT_INTERFACE" link2="wrist1_wrist2/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="Arm/J2_shoulder/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="Arm/J3_elbow/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
+    <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J2_shoulder/INPUT_INTERFACE" link2="Arm/J3_elbow/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J2_shoulder/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J2_shoulder/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
+    <disable_collisions link1="Arm/J2_shoulder/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J2_shoulder/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="Arm/J4_wrist1/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="Arm/J5_wrist2/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="elbow_wrist1/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/l_gripper" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/l_inner_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/l_outer_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/r_finger" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/r_gripper" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/r_inner_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="end_effector/r_outer_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J3_elbow/INPUT_INTERFACE" link2="wrist1_wrist2/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="Arm/J5_wrist2/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="elbow_wrist1/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/l_gripper" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/l_inner_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/l_outer_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/r_finger" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/r_gripper" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/r_inner_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="end_effector/r_outer_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="shoulder_elbow/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J4_wrist1/INPUT_INTERFACE" link2="wrist1_wrist2/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="elbow_wrist1/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Adjacent" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/l_gripper" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/l_inner_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/l_outer_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/r_finger" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/r_gripper" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/r_inner_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="end_effector/r_outer_linkage" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="shoulder_bracket/INPUT_INTERFACE" reason="Never" />
+    <disable_collisions link1="Arm/J5_wrist2/INPUT_INTERFACE" link2="wrist1_wrist2/INPUT_INTERFACE" reason="Adjacent" />
     <disable_collisions link1="elbow_wrist1/INPUT_INTERFACE" link2="end_effector/INPUT_INTERFACE" reason="Never" />
     <disable_collisions link1="elbow_wrist1/INPUT_INTERFACE" link2="end_effector/center_hub" reason="Never" />
     <disable_collisions link1="elbow_wrist1/INPUT_INTERFACE" link2="end_effector/l_finger" reason="Never" />
