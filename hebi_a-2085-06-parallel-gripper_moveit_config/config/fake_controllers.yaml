@@ -9,5 +9,4 @@ controller_list:
       - Arm/J6_wrist3/X5_1
   - name: fake_hand_controller
     joints:
-      - Arm/J6_wrist3/X5_1
       - end_effector/input_l_finger

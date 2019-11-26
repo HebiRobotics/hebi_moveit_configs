@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Matthew Tesch
     author_email: matt@hebirobotics.com
-    generated_timestamp: 1573833644
+    generated_timestamp: 1574792023
