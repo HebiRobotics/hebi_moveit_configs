@@ -1,6 +1,6 @@
 <package>
 
-  <name>hebi_A-2085-06-parallel-gripper_moveit_config</name>
+  <name>hebi_a-2085-06_moveit_config</name>
   <version>0.3.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the A-2085-06 with the MoveIt! Motion Planning Framework
