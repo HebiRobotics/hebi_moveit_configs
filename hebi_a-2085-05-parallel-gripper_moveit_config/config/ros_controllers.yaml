@@ -32,13 +32,9 @@ controller_list:
       - Arm/J3_elbow/X8_9
       - Arm/J4_wrist1/X5_1
       - Arm/J5_wrist2/X5_1
-hand_controller:
-  type: GripperCommand
-  joints:
-    end_effector/input_l_finger
-  gains:
-    end_effector/input_l_finger:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+  - name: hand_controller
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    joints:
+      end_effector/input_l_finger
