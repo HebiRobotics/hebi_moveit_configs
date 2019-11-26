@@ -35,4 +35,4 @@ controller_list:
     type: GripperCommand
     default: true
     joints:
-      end_effector/input_l_finger
+      - end_effector/input_l_finger
