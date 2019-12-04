@@ -57,11 +57,6 @@
     <end_effector name="hand" parent_link="end_effector/INPUT_INTERFACE" group="hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="world" />
-    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
-    <passive_joint name="end_effector/center_hub_l_inner_linkage" />
-    <passive_joint name="end_effector/center_hub_r_inner_linkage" />
-    <passive_joint name="end_effector/l_outer_linkage_l_gripper" />
-    <passive_joint name="end_effector/r_outer_linkage_r_gripper" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="Arm/J2_shoulder/INPUT_INTERFACE" reason="Never" />
     <disable_collisions link1="Arm/J1_base/INPUT_INTERFACE" link2="Arm/J3_elbow/INPUT_INTERFACE" reason="Never" />
