@@ -9,12 +9,12 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - HEBI/base/X8_9
-    - HEBI/shoulder/X8_16
-    - HEBI/elbow/X8_9
-    - HEBI/wrist1/X5_1
-    - HEBI/wrist2/X5_1
-    - HEBI/wrist3/X5_1
+    - Arm/J1_base/X8_9
+    - Arm/J2_shoulder/X8_16
+    - Arm/J3_elbow/X8_9
+    - Arm/J4_wrist1/X5_1
+    - Arm/J5_wrist2/X5_1
+    - Arm/J6_wrist3/X5_1
     - end_effector/input_l_finger
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
@@ -28,12 +28,12 @@ controller_list:
     default: True
     type: FollowJointTrajectory
     joints:
-      - HEBI/base/X8_9
-      - HEBI/shoulder/X8_16
-      - HEBI/elbow/X8_9
-      - HEBI/wrist1/X5_1
-      - HEBI/wrist2/X5_1
-      - HEBI/wrist3/X5_1
+      - Arm/J1_base/X8_9
+      - Arm/J2_shoulder/X8_16
+      - Arm/J3_elbow/X8_9
+      - Arm/J4_wrist1/X5_1
+      - Arm/J5_wrist2/X5_1
+      - Arm/J6_wrist3/X5_1
   - name: hand_controller
     action_ns: gripper_action
     type: GripperCommand

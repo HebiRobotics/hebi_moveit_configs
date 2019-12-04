@@ -121,7 +121,7 @@ planner_configs:
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
 hebi_arm:
-  default_planner_config: None
+  default_planner_config: RRT
   planner_configs:
     - SBL
     - EST
@@ -146,5 +146,5 @@ hebi_arm:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-  projection_evaluator: joints(HEBI/base/X5_4,HEBI/shoulder/X5_9)
+  projection_evaluator: joints(Arm/J1_base/X5_4,Arm/J2_shoulder/X5_9)
   longest_valid_segment_fraction: 0.005
