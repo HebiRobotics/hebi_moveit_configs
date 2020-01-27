@@ -17,7 +17,7 @@ joint_limits:
     max_velocity: 32
     has_acceleration_limits: false
     max_acceleration: 0
-  Arm/J4_wrist1/X5_1:
+  Arm/J4_wrist/X5_1:
     has_velocity_limits: true
     max_velocity: 90
     has_acceleration_limits: false
