@@ -10,10 +10,10 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="hebi_arm">
-        <joint name="Arm/J1_base/X5_4" />
-        <joint name="Arm/J2_shoulder/X5_9" />
-        <joint name="Arm/J3_elbow/X5_4" />
-        <joint name="Arm/J4_wrist1/X5_1" />
+        <joint name="Arm/J1_base" />
+        <joint name="Arm/J2_shoulder" />
+        <joint name="Arm/J3_elbow" />
+        <joint name="Arm/J4_wrist1" />
     </group>
     <group name="hand">
         <link name="end_effector/center_hub" />

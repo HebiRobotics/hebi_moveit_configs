@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/A-2085-06.srdf
   CONFIG:
-    author_name: Matthew Tesch
-    author_email: matt@hebirobotics.com
-    generated_timestamp: 1574792023
+    author_name: Chris Bollinger
+    author_email: chris@hebirobotics.com
+    generated_timestamp: 1580849489

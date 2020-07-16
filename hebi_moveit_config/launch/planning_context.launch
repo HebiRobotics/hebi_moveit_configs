@@ -1,0 +1,26 @@
+<launch>
+  <arg name="arm_type"/>
+
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="false"/>
+
+  <!-- The name of the parameter under which the URDF is loaded -->
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- Load universal robot description format (URDF) -->
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="rosrun hebi_description hrdf_convert '$(find hebi_cpp_api_examples)/config/$(arg arm_type)_params.yaml'"/>
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="$(arg robot_description)_semantic" textfile="$(find hebi_moveit_config)/config/$(arg arm_type).srdf" />
+
+  <!-- Load updated joint limits (override information from URDF) -->
+  <group ns="$(arg robot_description)_planning">
+    <rosparam command="load" file="$(find hebi_moveit_config)/config/$(arg arm_type)_joint_limits.yaml"/>
+  </group>
+
+  <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+  <group ns="$(arg robot_description)_kinematics">
+    <rosparam command="load" file="$(find hebi_moveit_config)/config/$(arg arm_type)_kinematics.yaml"/>
+  </group>
+
+</launch>

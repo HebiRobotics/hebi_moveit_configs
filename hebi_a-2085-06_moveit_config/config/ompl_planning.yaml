@@ -146,5 +146,5 @@ hebi_arm:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-  projection_evaluator: joints(Arm/J1_base/X8_9,Arm/J2_shoulder/X8_16)
+  projection_evaluator: joints(Arm/J1_base,Arm/J2_shoulder)
   longest_valid_segment_fraction: 0.005
