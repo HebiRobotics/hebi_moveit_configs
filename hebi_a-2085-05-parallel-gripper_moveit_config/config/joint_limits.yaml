@@ -40,7 +40,7 @@ joint_limits:
     max_acceleration: 0
   end_effector/center_hub_pinion:
     has_velocity_limits: true
-    max_velocity: 1000
+    max_velocity: 1000.0
     has_acceleration_limits: false
     max_acceleration: 0
   end_effector/center_hub_r_inner_linkage:
@@ -50,21 +50,21 @@ joint_limits:
     max_acceleration: 0
   end_effector/input_l_finger:
     has_velocity_limits: true
-    max_velocity: 1000
+    max_velocity: 1000.0
     has_acceleration_limits: false
     max_acceleration: 0
   end_effector/input_r_finger:
     has_velocity_limits: true
-    max_velocity: 1000
+    max_velocity: 1000.0
     has_acceleration_limits: false
     max_acceleration: 0
   end_effector/l_outer_linkage_l_gripper:
     has_velocity_limits: true
-    max_velocity: 1000
+    max_velocity: 1000.0
     has_acceleration_limits: false
     max_acceleration: 0
   end_effector/r_outer_linkage_r_gripper:
     has_velocity_limits: true
-    max_velocity: 1000
+    max_velocity: 1000.0
     has_acceleration_limits: false
     max_acceleration: 0
