@@ -1,28 +1,31 @@
 # HEBI MoveIt Configurations
 
-(Note -- this has only been tested on Melodic)
-
-This repository provides MoveIt configurations for HEBI standard arm kits.  These are designed for and have been tested with the HEBI MoveIt node in the `hebi_cpp_api_examples` package ( https://github.com/HebiRobotics/hebi_cpp_api_ros_examples/ ).
+This repository provides MoveIt configurations for HEBI standard arm kits.
 
 ## Running the HEBI MoveIt examples
 
-You must have the following repositories or packages in your catkin workspace:
+To run the examples, you need to install the `hebi_app_api_ros` package:
+```
+sudo apt install hebi_app_api_ros
+```
 
-- `hebi_cpp_api_examples` ( https://github.com/HebiRobotics/hebi_cpp_api_ros_examples/ ).
+You must also have the following repositories or packages in your catkin workspace:
+
 - `hebi_description` ( https://github.com/HebiRobotics/hebi_description/ ).
+- `hebi_hardware` ( https://github.com/HebiRobotics/hebi_hardware/ ).
 - `hebi_moveit_configs` ( https://github.com/HebiRobotics/hebi_moveit_configs/ ).
 
-After running `catkin make`, first modify the parameters in the `moveit_arm_node<configuration>.launch` file to match your robot (e.g., module names, desired gains, etc).  In particular, ensure that the modules you are trying to control have matching name and family properties to those in the launch file (these properties can be set using the Scope tool found at http://docs.hebi.us ).  Then run:
+Modify the `initial_positions.yaml` file in the `config` folder to match your robot.  In particular, ensure that the modules you are trying to control have matching name and family properties to those in the launch file (these properties can be set using the Scope tool found at http://docs.hebi.us ). After running `colcon build` from your ROS 2 workspace, launch the demo by running:
 
 ```
-roslaunch hebi_cpp_api_ros_examples moveit_arm_node<configuration>.launch
+ros2 launch hebi_<robot_name>_moveit_config demo.launch.py
 ```
 
 ## Creating a MoveIt configration for a custom robot from HEBI components
 
-For a custom system created from HEBI components, you can follow the same steps we used for creating these configurations to ensure the resulting configuration will work with the HEBI MoveIt node.  First, create a .xacro file for your custom robot (using the components/examples/documentation in https://github.com/HebiRobotics/hebi_description ), and then follow the instructions below.
+For a custom system created from HEBI components, you can follow the same steps that were used for creating these configurations.  First, create a `.urdf.xacro` file for your custom robot (using the components/examples/documentation in https://github.com/HebiRobotics/hebi_description ), and then follow the instructions below.
 
-Note -- this closely follows the [official MoveIt tutorial](http://docs.ros.org/melodic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html), and this should be referenced for more detailed information.
+Note -- this closely follows the [official MoveIt tutorial](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html), and this should be referenced for more detailed information.
 
 ### Launching the setup assistant
 

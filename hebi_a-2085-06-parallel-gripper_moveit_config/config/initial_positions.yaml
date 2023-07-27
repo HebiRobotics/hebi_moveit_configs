@@ -1,0 +1,24 @@
+# Default initial positions for A-2085-06-parallel-gripper's ros2_control fake system
+initial_positions:
+  J1_base: 0
+  J2_shoulder: 0
+  J3_elbow: 0
+  J4_wrist1: 0
+  J5_wrist2: 0
+  J6_wrist3: 0
+  end_effector/input_l_finger: 0
+
+# Initial position for the arm when use_mock_hardware is false
+home_position: "0.0;2.09;2.09;0.0;1.57;0.0"
+
+families: "HEBI_Arm"
+
+names: "J1_base;J2_shoulder;J3_elbow;J4_wrist1;J5_wrist2;J6_wrist3"
+
+hrdf_pkg: "hebi_description"
+hrdf_file: "config/hrdf/A-2085-06-parallel-gripper.hrdf"
+gains_pkg: "hebi_description"
+gains_file: "config/gains/A-2085-06_gains.xml"
+
+use_mock_hardware: true
+use_gazebo: false

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="A-2084-01">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import A-2084-01 urdf file -->
+    <xacro:include filename="$(find hebi_description)/urdf/kits/A-2084-01.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="A-2084-01.ros2_control.xacro" />
+
+
+    <xacro:A-2084-01_ros2_control name="A-2084-01" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

@@ -1,11 +1,27 @@
 moveit_setup_assistant_config:
-  URDF:
+  urdf:
     package: hebi_description
-    relative_path: urdf/kits/A-2085-06.xacro
-    xacro_args: --xacro-ns
-  SRDF:
+    relative_path: urdf/kits/A-2085-06.urdf.xacro
+  srdf:
     relative_path: config/A-2085-06.srdf
-  CONFIG:
-    author_name: Matthew Tesch
-    author_email: matt@hebirobotics.com
-    generated_timestamp: 1574792023
+  package_settings:
+    author_name: Hariharan Ravichandran
+    author_email: hariharan@hebirobotics.com
+    generated_timestamp: 1690404076
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity

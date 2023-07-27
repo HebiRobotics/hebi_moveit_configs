@@ -1,0 +1,19 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - hebi_arm_controller
+
+  hebi_arm_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - J1_base
+      - J2_shoulder
+      - J3_elbow
+      - J4_wrist1
+      - J5_wrist2
+      - J6_wrist3
