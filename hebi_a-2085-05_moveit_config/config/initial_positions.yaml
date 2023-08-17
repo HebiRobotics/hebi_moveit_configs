@@ -9,7 +9,7 @@ initial_positions:
 # Initial position for the arm when use_mock_hardware is false
 home_position: "0.0;2.09;2.09;1.57;0.0"
 
-families: "HEBI_Arm"
+families: "Arm"
 
 names: "J1_base;J2_shoulder;J3_elbow;J4_wrist1;J5_wrist2"
 

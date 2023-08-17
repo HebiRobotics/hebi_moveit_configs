@@ -6,15 +6,13 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the A-2085-05-parallel-gripper with the MoveIt Motion Planning Framework
   </description>
-  <maintainer email="hariharan@hebirobotics.com">Hariharan Ravichandran</maintainer>
+  <maintainer email="chris@hebirobotics.com">Chris Bollinger</maintainer>
 
   <license>BSD</license>
 
   <url type="website">http://moveit.ros.org/</url>
   <url type="bugtracker">https://github.com/ros-planning/moveit2/issues</url>
   <url type="repository">https://github.com/ros-planning/moveit2</url>
-
-  <author email="hariharan@hebirobotics.com">Hariharan Ravichandran</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
