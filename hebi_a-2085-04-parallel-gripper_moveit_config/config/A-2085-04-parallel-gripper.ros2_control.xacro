@@ -79,7 +79,7 @@
         <xacro:if value="${use_gazebo}">
           <gazebo>
             <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-              <parameters>$(find hebi_a-2085-04-parallel-gripper)/config/ros2_controllers.yaml</parameters>
+              <parameters>$(find hebi_a-2085-04-parallel-gripper_moveit_config)/config/ros2_controllers.yaml</parameters>
             </plugin>
           </gazebo>
         </xacro:if>
