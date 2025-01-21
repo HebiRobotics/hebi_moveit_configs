@@ -11,55 +11,55 @@ joint_limits:
   J1_base:
     has_velocity_limits: true
     max_velocity: 3.351
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   J2_shoulder:
     has_velocity_limits: true
     max_velocity: 1.466
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   J3_elbow:
     has_velocity_limits: true
     max_velocity: 3.351
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   J4_wrist:
     has_velocity_limits: true
     max_velocity: 9.4250000000000007
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/center_hub_l_inner_linkage:
     has_velocity_limits: false
     max_velocity: 0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/center_hub_pinion:
     has_velocity_limits: true
     max_velocity: 1000.0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/center_hub_r_inner_linkage:
     has_velocity_limits: false
     max_velocity: 0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/input_l_finger:
     has_velocity_limits: true
     max_velocity: 1000.0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/input_r_finger:
     has_velocity_limits: true
     max_velocity: 1000.0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/l_outer_linkage_l_gripper:
     has_velocity_limits: true
     max_velocity: 1000.0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
   end_effector/r_outer_linkage_r_gripper:
     has_velocity_limits: true
     max_velocity: 1000.0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_acceleration_limits: true
+    max_acceleration: 5.0
