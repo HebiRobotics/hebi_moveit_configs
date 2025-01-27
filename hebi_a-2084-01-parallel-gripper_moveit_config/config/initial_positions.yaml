@@ -16,7 +16,7 @@ names: "J1_base;J2_shoulder;J3_elbow;J4_wrist;gripper"
 hrdf_pkg: "hebi_description"
 hrdf_file: "config/hrdf/A-2084-01-parallel-gripper.hrdf"
 gains_pkg: "hebi_description"
-gains_file: "config/gains/A-2084-01_gains.xml"
+gains_file: "config/gains/A-2084-01.xml"
 
 use_mock_hardware: true
 use_gazebo: false
