@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Hariharan Ravichandran
     author_email: hariharan@hebirobotics.com
-    generated_timestamp: 1690404076
+    generated_timestamp: 1740076209
   control_xacro:
     command:
       - position
