@@ -7,7 +7,7 @@ controller_manager:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
-    grip_action_controller:
+    gripper_controller:
       type: position_controllers/GripperActionController
 
 
@@ -27,6 +27,6 @@ hebi_arm_controller:
     state_interfaces:
       - position
       - velocity
-grip_action_controller:
+gripper_controller:
   ros__parameters:
     joint: end_effector_1/input_l_finger
