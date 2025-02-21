@@ -10,8 +10,12 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="hebi_arm">
+        <joint name="virtual_joint"/>
+        <joint name="base_joint"/>
         <joint name="J1_base"/>
+        <joint name="bracket_1_J2_shoulder"/>
         <joint name="J2_shoulder"/>
+        <joint name="link_1/joint"/>
         <joint name="J3_elbow"/>
     </group>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->

@@ -10,14 +10,32 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="hebi_arm">
+        <joint name="virtual_joint"/>
+        <joint name="base_joint"/>
         <joint name="J1_base"/>
+        <joint name="bracket_1_J2_shoulder"/>
         <joint name="J2_shoulder"/>
+        <joint name="link_1/joint"/>
         <joint name="J3_elbow"/>
+        <joint name="link_2/joint"/>
         <joint name="J4_wrist1"/>
+        <joint name="bracket_2_J5_wrist2"/>
         <joint name="J5_wrist2"/>
     </group>
     <group name="gripper">
-        <joint name="end_effector_1/input_l_finger"/>
+        <link name="end_effector_1/center_hub"/>
+        <link name="end_effector_1/l_inner_linkage"/>
+        <link name="end_effector_1/center_pinion"/>
+        <link name="end_effector_1/r_inner_linkage"/>
+        <link name="end_effector_1/l_finger"/>
+        <link name="end_effector_1/l_outer_linkage"/>
+        <link name="end_effector_1/l_gripper"/>
+        <link name="end_effector_1/l_gripper_bend"/>
+        <link name="end_effector_1/r_finger"/>
+        <link name="end_effector_1/r_outer_linkage"/>
+        <link name="end_effector_1/r_gripper"/>
+        <link name="end_effector_1/r_gripper_bend"/>
+        <link name="end_effector_1/output"/>
     </group>
     <group name="hebi_arm_with_gripper">
         <group name="hebi_arm"/>
@@ -39,7 +57,6 @@
     <disable_collisions link1="J1_base/body" link2="J3_elbow/body" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="bracket_1" reason="Adjacent"/>
     <disable_collisions link1="J1_base/body" link2="end_effector_1/center_pinion" reason="Never"/>
-    <disable_collisions link1="J1_base/body" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="link_1" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="J3_elbow/body" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="bracket_1" reason="Adjacent"/>
