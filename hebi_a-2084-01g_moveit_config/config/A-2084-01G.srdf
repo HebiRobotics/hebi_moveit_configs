@@ -16,19 +16,7 @@
         <joint name="J4_wrist"/>
     </group>
     <group name="gripper">
-        <joint name="end_effector_1/input_center_hub"/>
-        <joint name="end_effector_1/center_hub_l_inner_linkage"/>
-        <joint name="end_effector_1/center_hub_pinion"/>
-        <joint name="end_effector_1/center_hub_r_inner_linkage"/>
         <joint name="end_effector_1/input_l_finger"/>
-        <joint name="end_effector_1/l_finger_l_outer_linkage"/>
-        <joint name="end_effector_1/l_outer_linkage_l_gripper"/>
-        <joint name="end_effector_1/l_gripper_finger_l_gripper_bend"/>
-        <joint name="end_effector_1/input_r_finger"/>
-        <joint name="end_effector_1/r_finger_r_outer_linkage"/>
-        <joint name="end_effector_1/r_outer_linkage_r_gripper"/>
-        <joint name="end_effector_1/r_gripper_finger_r_gripper_bend"/>
-        <joint name="end_effector_1/output_joint"/>
     </group>
     <group name="hebi_arm_with_gripper">
         <group name="hebi_arm"/>
