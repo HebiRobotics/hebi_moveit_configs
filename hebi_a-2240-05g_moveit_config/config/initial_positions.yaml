@@ -1,0 +1,9 @@
+# Default initial positions for A-2240-05G's ros2_control fake system
+
+initial_positions:
+  J1_base: 0
+  J2_shoulder: 0
+  J3_elbow: 0
+  J4_wrist1: 0
+  J5_wrist2: 0
+  end_effector_1/input_l_finger: 0

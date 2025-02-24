@@ -8,10 +8,10 @@ moveit_simple_controller_manager:
 
   hebi_arm_controller:
     type: FollowJointTrajectory
-    action_ns: follow_joint_trajectory
-    default: true
     joints:
       - J1_base
       - J2_shoulder
       - J3_elbow
       - J4_wrist
+    action_ns: follow_joint_trajectory
+    default: true

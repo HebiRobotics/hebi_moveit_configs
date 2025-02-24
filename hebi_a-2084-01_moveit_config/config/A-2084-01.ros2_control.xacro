@@ -42,14 +42,5 @@
             </joint>
 
         </ros2_control>
-
-        <!-- Gazebo Classic plugins -->
-        <xacro:if value="${use_gazebo}">
-          <gazebo>
-            <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-              <parameters>$(find hebi_a-2084-01_moveit_config)/config/ros2_controllers.yaml</parameters>
-            </plugin>
-          </gazebo>
-        </xacro:if>
     </xacro:macro>
 </robot>

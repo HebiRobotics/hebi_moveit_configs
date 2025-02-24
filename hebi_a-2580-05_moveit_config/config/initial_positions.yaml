@@ -1,0 +1,8 @@
+# Default initial positions for A-2580-05's ros2_control fake system
+
+initial_positions:
+  J1_base: 0
+  J2_shoulder: 0
+  J3_elbow: 0
+  J4_wrist1: 0
+  J5_wrist2: 0
