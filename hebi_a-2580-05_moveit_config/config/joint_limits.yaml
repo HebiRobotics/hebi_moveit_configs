@@ -12,24 +12,24 @@ joint_limits:
     has_velocity_limits: true
     max_velocity: 4.0839999999999996
     has_acceleration_limits: true
-    max_acceleration: 1000.0
+    max_acceleration: 1.0
   J2_shoulder:
     has_velocity_limits: true
     max_velocity: 2.0939999999999999
     has_acceleration_limits: true
-    max_acceleration: 1000.0
+    max_acceleration: 1.0
   J3_elbow:
     has_velocity_limits: true
     max_velocity: 4.0839999999999996
     has_acceleration_limits: true
-    max_acceleration: 1000.0
+    max_acceleration: 1.0
   J4_wrist1:
     has_velocity_limits: true
     max_velocity: 9.4250000000000007
     has_acceleration_limits: true
-    max_acceleration: 1000.0
+    max_acceleration: 1.0
   J5_wrist2:
     has_velocity_limits: true
     max_velocity: 9.4250000000000007
     has_acceleration_limits: true
-    max_acceleration: 1000.0
+    max_acceleration: 1.0
