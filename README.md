@@ -29,6 +29,16 @@ The following steps closely follow the official MoveIt tutorial ([https://moveit
 
 Other Reference: https://automaticaddison.com/complete-guide-to-the-moveit-setup-assistant-for-moveit-2/
 
+### Known Issue: ROS Jazzy and Later
+
+⚠️ **IMPORTANT:** The MoveIt Setup Assistant has a known issue in ROS Jazzy and later distributions where the "Edit Existing MoveIt Configuration Package" option crashes when selected.
+
+**Workarounds:**
+- **Option 1:** Use ROS Humble to edit existing MoveIt configurations
+- **Option 2:** Manually edit the configuration files (see sections below for guidance)
+
+If you need to add saved poses or modify existing configurations, manual editing is recommended (see [Manual Edits to Configuration Files](#manual-edits-to-configuration-files) section).
+
 ### 1. Load File
 
 Click on the "Create New MoveIt Configuration Package" button and load the URDF xacro file. Finally, click on the "Load Files" button to proceed.
@@ -140,11 +150,42 @@ Click on the "Exit Setup Assistant" button to exit the MoveIt Setup Assistant.
 
 ### Manual Edits to Configuration Files
 
+#### Adding Saved Poses to SRDF
+
+To manually add saved robot poses (also called "group states") to your MoveIt configuration, edit the `.srdf` file located in `config/<your_robot_name>.srdf`. Add or modify group states within the `<group_state>` tags:
+
+```xml
+<!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+<group_state name="home" group="hebi_arm">
+    <joint name="J1_base" value="0"/>
+    <joint name="J2_shoulder" value="1.2"/>
+    <joint name="J3_elbow" value="1.8"/>
+    <joint name="J4_wrist1" value="2.2"/>
+    <joint name="J5_wrist2" value="-1.57"/>
+    <joint name="J6_wrist3" value="0"/>
+</group_state>
+```
+
+You can add multiple group states for different poses. For grippers, you would typically add `open` and `closed` states:
+
+```xml
+<group_state name="open" group="gripper">
+    <joint name="end_effector_1/input_l_finger" value="0"/>
+</group_state>
+<group_state name="closed" group="gripper">
+    <joint name="end_effector_1/input_l_finger" value="1.1623"/>
+</group_state>
+```
+
+#### Controller Configuration Fixes
+
 - There is a bug in the setup assistant that does not add `action_ns` and `default` parameters to the controllers in the `moveit_controllers.yaml` file if you auto-generated the MoveIt Controllers. In case you do not see them, add them manually as:
 ```
 action_ns: follow_joint_trajectory (for hebi_arm_controller) or gripper_cmd (for gripper_controller)
 default: true
 ```
+
+#### Joint Limits Configuration
 
 - Sometimes, MoveIt throws an error when there are no acceleration limits set for the joints. So, manually set `has_acceleration_limits` to `true` and set an appropriate value for `max_acceleration`.
 
