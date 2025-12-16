@@ -173,7 +173,7 @@ You can add multiple group states for different poses. For grippers, you would t
     <joint name="end_effector_1/input_l_finger" value="0"/>
 </group_state>
 <group_state name="closed" group="gripper">
-    <joint name="end_effector_1/input_l_finger" value="1.1623"/>
+    <joint name="end_effector_1/input_l_finger" value="1.1466"/>
 </group_state>
 ```
 

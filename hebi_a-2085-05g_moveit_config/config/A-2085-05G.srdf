@@ -46,7 +46,7 @@
         <joint name="end_effector_1/input_l_finger" value="0"/>
     </group_state>
     <group_state name="closed" group="gripper">
-        <joint name="end_effector_1/input_l_finger" value="1.1623"/>
+        <joint name="end_effector_1/input_l_finger" value="1.1466"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="end_effector_1" group="gripper"/>
@@ -56,68 +56,188 @@
     <disable_collisions link1="J1_base/body" link2="J2_shoulder/body" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="J3_elbow/body" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="bracket_1" reason="Adjacent"/>
+    <disable_collisions link1="J1_base/body" link2="end_effector_1" reason="Never"/>
+    <disable_collisions link1="J1_base/body" link2="end_effector_1/center_hub" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="end_effector_1/center_pinion" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="link_1" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="J3_elbow/body" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="bracket_1" reason="Adjacent"/>
+    <disable_collisions link1="J2_shoulder/body" link2="end_effector_1" reason="Never"/>
+    <disable_collisions link1="J2_shoulder/body" link2="end_effector_1/center_hub" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="end_effector_1/center_pinion" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="link_1" reason="Adjacent"/>
     <disable_collisions link1="J3_elbow/body" link2="J4_wrist1/body" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="J5_wrist2/body" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="bracket_1" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="bracket_2" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/center_hub" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="end_effector_1/center_pinion" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="end_effector_1/l_finger" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/l_outer_linkage" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="link_1" reason="Adjacent"/>
     <disable_collisions link1="J3_elbow/body" link2="link_2" reason="Adjacent"/>
     <disable_collisions link1="J4_wrist1/body" link2="J5_wrist2/body" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="bracket_1" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="bracket_2" reason="Adjacent"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/center_hub" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/center_pinion" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/l_finger" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/l_outer_linkage" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="link_1" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="link_2" reason="Adjacent"/>
     <disable_collisions link1="J5_wrist2/body" link2="bracket_1" reason="Never"/>
     <disable_collisions link1="J5_wrist2/body" link2="bracket_2" reason="Adjacent"/>
-    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/center_pinion" reason="Adjacent"/>
-    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/l_finger" reason="Adjacent"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1" reason="Adjacent"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/center_hub" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/center_pinion" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/l_finger" reason="Never"/>
     <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/l_gripper" reason="Never"/>
-    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/r_finger" reason="Adjacent"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/l_outer_linkage" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="J5_wrist2/body" link2="link_2" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="bracket_2" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/center_hub" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="end_effector_1/center_pinion" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="end_effector_1/l_finger" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/l_outer_linkage" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="link_1" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/center_hub" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="end_effector_1/center_pinion" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="end_effector_1/l_finger" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/l_outer_linkage" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="link_2" reason="Never"/>
-    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/l_finger" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/center_hub" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/center_pinion" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/l_finger" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/l_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/r_finger" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/center_pinion" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/l_finger" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/l_inner_linkage" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/l_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/r_finger" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/r_inner_linkage" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_hub" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/l_finger" reason="Default"/>
     <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/l_gripper" reason="Never"/>
-    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/r_finger" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/l_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/r_finger" reason="Default"/>
     <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/center_pinion" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="end_effector_1/center_pinion" link2="link_2" reason="Never"/>
-    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/l_gripper" reason="Adjacent"/>
-    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/r_finger" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/l_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/l_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/l_outer_linkage" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_finger" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="end_effector_1/l_finger" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/l_gripper_bend" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/l_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/l_outer_linkage" reason="Adjacent"/>
     <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/r_finger" reason="Never"/>
     <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper" link2="end_effector_1/r_outer_linkage" reason="Never"/>
     <disable_collisions link1="end_effector_1/l_gripper" link2="link_2" reason="Never"/>
-    <disable_collisions link1="end_effector_1/r_finger" link2="end_effector_1/r_gripper" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/l_inner_linkage" reason="Default"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/l_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/r_finger" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_gripper_bend" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="end_effector_1/l_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="end_effector_1/r_finger" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_inner_linkage" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_outer_linkage" link2="end_effector_1/r_finger" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_outer_linkage" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_outer_linkage" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_outer_linkage" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_outer_linkage" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/l_outer_linkage" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_finger" link2="end_effector_1/r_gripper" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_finger" link2="end_effector_1/r_gripper_bend" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_finger" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_finger" link2="end_effector_1/r_outer_linkage" reason="Adjacent"/>
     <disable_collisions link1="end_effector_1/r_finger" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_gripper" link2="end_effector_1/r_gripper_bend" reason="Adjacent"/>
+    <disable_collisions link1="end_effector_1/r_gripper" link2="end_effector_1/r_inner_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_gripper" link2="end_effector_1/r_outer_linkage" reason="Adjacent"/>
     <disable_collisions link1="end_effector_1/r_gripper" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_gripper_bend" link2="end_effector_1/r_inner_linkage" reason="Default"/>
+    <disable_collisions link1="end_effector_1/r_gripper_bend" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_gripper_bend" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_inner_linkage" link2="end_effector_1/r_outer_linkage" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_inner_linkage" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1/r_outer_linkage" link2="link_2" reason="Never"/>
     <disable_collisions link1="link_1" link2="link_2" reason="Never"/>
 </robot>

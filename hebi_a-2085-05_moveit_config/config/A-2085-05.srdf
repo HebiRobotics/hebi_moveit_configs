@@ -28,26 +28,34 @@
     <disable_collisions link1="J1_base/body" link2="J2_shoulder/body" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="J3_elbow/body" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="bracket_1" reason="Adjacent"/>
+    <disable_collisions link1="J1_base/body" link2="end_effector_1" reason="Never"/>
     <disable_collisions link1="J1_base/body" link2="link_1" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="J3_elbow/body" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="bracket_1" reason="Adjacent"/>
+    <disable_collisions link1="J2_shoulder/body" link2="end_effector_1" reason="Never"/>
     <disable_collisions link1="J2_shoulder/body" link2="link_1" reason="Adjacent"/>
     <disable_collisions link1="J3_elbow/body" link2="J4_wrist1/body" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="J5_wrist2/body" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="bracket_1" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="bracket_2" reason="Never"/>
+    <disable_collisions link1="J3_elbow/body" link2="end_effector_1" reason="Never"/>
     <disable_collisions link1="J3_elbow/body" link2="link_1" reason="Adjacent"/>
     <disable_collisions link1="J3_elbow/body" link2="link_2" reason="Adjacent"/>
     <disable_collisions link1="J4_wrist1/body" link2="J5_wrist2/body" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="bracket_1" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="bracket_2" reason="Adjacent"/>
+    <disable_collisions link1="J4_wrist1/body" link2="end_effector_1" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="link_1" reason="Never"/>
     <disable_collisions link1="J4_wrist1/body" link2="link_2" reason="Adjacent"/>
     <disable_collisions link1="J5_wrist2/body" link2="bracket_1" reason="Never"/>
     <disable_collisions link1="J5_wrist2/body" link2="bracket_2" reason="Adjacent"/>
+    <disable_collisions link1="J5_wrist2/body" link2="end_effector_1" reason="Adjacent"/>
     <disable_collisions link1="J5_wrist2/body" link2="link_2" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="bracket_2" reason="Never"/>
+    <disable_collisions link1="bracket_1" link2="end_effector_1" reason="Never"/>
     <disable_collisions link1="bracket_1" link2="link_1" reason="Never"/>
+    <disable_collisions link1="bracket_2" link2="end_effector_1" reason="Never"/>
     <disable_collisions link1="bracket_2" link2="link_2" reason="Never"/>
+    <disable_collisions link1="end_effector_1" link2="link_2" reason="Never"/>
     <disable_collisions link1="link_1" link2="link_2" reason="Never"/>
 </robot>
